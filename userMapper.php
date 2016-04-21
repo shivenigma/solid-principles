@@ -15,10 +15,11 @@ class userMapper
         //initialize databse connection
         //used mysql
     }
-    public function save($user)
+    public function save(adminInterface $user)
     {
         //some code to save in databse
         //work on the user object
+        //save the user here
     }
     public function get()
     {

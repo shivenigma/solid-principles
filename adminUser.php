@@ -15,9 +15,8 @@ class adminUser implements adminInterface
     private $name;
     private $email;
 
-    public function __construct($name, $email, $dob, $admin)
+    public function __construct($name, $email, $admin)
     {
-        parent::__construct($name, $email, $dob);
         $this->admin = $admin;
     }
 
@@ -34,15 +33,5 @@ class adminUser implements adminInterface
     public function isAdmin()
     {
         return true;
-    }
-
-    public function save(userMapper $mapper)
-    {
-        $admin = array(
-            "name" => $this->name,
-            "email" => $this->email,
-            "admin" => $this->admin
-        );
-        $mapper->save($admin);
     }
 }

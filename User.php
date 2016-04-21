@@ -44,14 +44,4 @@ class User implements userInterface, adminInterface
     {
         $this->status = false;
     }
-
-    public function save(userMapper $mapper)
-    {
-        $user = array(
-            "name" => $this->name,
-            "email" => $this->email,
-            "age" => $this->age
-        );
-        $mapper->save($user);
-    }
 }
