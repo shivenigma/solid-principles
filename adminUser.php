@@ -9,18 +9,12 @@
 namespace Innoppl\Solid;
 
 
-class adminUser extends User
+class adminUser implements userInterface
 {
     private $admin;
-
-    public function calculateAge($dob)
-    {
-        return 0;
-        /*
-         * a override to the 
-         * Refused bequest: a class that overrides a method of a base class in such a way that the contract of the base class is not honored by the derived class
-         * */
-    }
+    private $name;
+    private $email;
+    private $age;
 
     public function __construct($name, $email, $dob, $admin)
     {
@@ -28,8 +22,27 @@ class adminUser extends User
         $this->admin = $admin;
     }
 
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function calculateAge($dob)
+    {
+        return null;
+        /*
+         * not a override but just a different implementation
+         * our system don't need age of the admin as of now.
+         * */
+    }
+
     public function isAdmin()
     {
-        return $this->admin;
+        return true;
     }
 }

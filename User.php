@@ -3,7 +3,7 @@
 namespace Innoppl\Solid;
 
 
-class User
+class User implements userInterface
 {
     private $name;
     private $email;
@@ -31,5 +31,10 @@ class User
         //some stuff to calculate age from dob
         $age = "";
         $this->age = $age;
+    }
+
+    public function isAdmin()
+    {
+        return false;
     }
 }
