@@ -34,7 +34,7 @@ class adminUser implements userInterface
 
     public function calculateAge($dob)
     {
-        return null;
+        $this->age = null;
         /*
          * not a override but just a different implementation
          * our system don't need age of the admin as of now.
@@ -44,5 +44,13 @@ class adminUser implements userInterface
     public function isAdmin()
     {
         return true;
+    }
+
+    public function deactivate()
+    {
+        return false;
+        //an admin can't deactivate his account, because there is no one else to take up his mantle.
+        //but we must implement this method because we implemented the userInterface.
+        //typical example of Interface segregation violation principle.
     }
 }

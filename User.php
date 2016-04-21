@@ -8,12 +8,14 @@ class User implements userInterface
     private $name;
     private $email;
     private $age;
+    private $status;
 
     public function __construct($name, $email, $dob)
     {
         $this->setName($name);
         $this->setEmail($email);
         $this->calculateAge($dob);
+        $this->status = true;
     }
 
     public function setName($name)
@@ -36,5 +38,10 @@ class User implements userInterface
     public function isAdmin()
     {
         return false;
+    }
+
+    public function deactivate()
+    {
+        $this->status = false;
     }
 }

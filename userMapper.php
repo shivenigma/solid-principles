@@ -10,9 +10,10 @@ class userMapper
         //initialize databse connection
         //used mysql
     }
-    public function save()
+    public function save(User $user)
     {
         //some code to save in databse
+        //work on the user object
     }
     public function get()
     {

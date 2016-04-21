@@ -19,4 +19,6 @@ interface userInterface
     public function calculateAge($dob);
 
     public function isAdmin();
+
+    public function deactivate();
 }
