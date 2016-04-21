@@ -16,4 +16,6 @@ interface adminInterface
     public function setEmail($email);
 
     public function isAdmin();
+
+    public function save(userMapper $mapper);
 }

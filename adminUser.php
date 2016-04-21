@@ -35,4 +35,14 @@ class adminUser implements adminInterface
     {
         return true;
     }
+
+    public function save(userMapper $mapper)
+    {
+        $admin = array(
+            "name" => $this->name,
+            "email" => $this->email,
+            "admin" => $this->admin
+        );
+        $mapper->save($admin);
+    }
 }

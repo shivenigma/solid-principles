@@ -3,7 +3,7 @@
 namespace Innoppl\Solid;
 
 
-class User implements userInterface
+class User implements userInterface, adminInterface
 {
     private $name;
     private $email;
@@ -43,5 +43,15 @@ class User implements userInterface
     public function deactivate()
     {
         $this->status = false;
+    }
+
+    public function save(userMapper $mapper)
+    {
+        $user = array(
+            "name" => $this->name,
+            "email" => $this->email,
+            "age" => $this->age
+        );
+        $mapper->save($user);
     }
 }
