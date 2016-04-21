@@ -9,12 +9,11 @@
 namespace Innoppl\Solid;
 
 
-class adminUser implements userInterface
+class adminUser implements adminInterface
 {
     private $admin;
     private $name;
     private $email;
-    private $age;
 
     public function __construct($name, $email, $dob, $admin)
     {
@@ -32,25 +31,8 @@ class adminUser implements userInterface
         $this->email = $email;
     }
 
-    public function calculateAge($dob)
-    {
-        $this->age = null;
-        /*
-         * not a override but just a different implementation
-         * our system don't need age of the admin as of now.
-         * */
-    }
-
     public function isAdmin()
     {
         return true;
-    }
-
-    public function deactivate()
-    {
-        return false;
-        //an admin can't deactivate his account, because there is no one else to take up his mantle.
-        //but we must implement this method because we implemented the userInterface.
-        //typical example of Interface segregation violation principle.
     }
 }

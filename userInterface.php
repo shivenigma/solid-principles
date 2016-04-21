@@ -12,13 +12,8 @@ namespace Innoppl\Solid;
 interface userInterface
 {
 
-    public function setName($name);
-
-    public function setEmail($email);
-
     public function calculateAge($dob);
-
-    public function isAdmin();
+    
 
     public function deactivate();
 }
